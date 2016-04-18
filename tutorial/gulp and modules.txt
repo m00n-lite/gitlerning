@@ -1,0 +1,44 @@
+gulp....
+1)Відкриваємо консоль і вводимо
+c:
+cd c:/server
+npm install --save-dev gulp
+2)ми встановили gulp в наш проект
+3)створюэмо файл package.json З таким текстом
+
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate description",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+  }
+}
+
+Хто хоче може не створювати файл а виконати команду
+npm init
+вона сама створить файл але буде запитувати якісь параметри в яких треба трохи розібратись)
+
+
+4) встановлюємо модулі gulp : gulp-concat і gulp-watch вводимо команду в консоль:
+npm install gulp-concat gulp-watch --save-dev
+
+створюємо файл gulpfile.js
+
+var gulp = require('gulp');//підключаємо модулі
+var concat = require('gulp-concat');//підключаємо модулі - watch підключати не треба він працює так... чому незнаю ще не розібрався
+
+gulp.task('default', function() {   //створюэмо задачу
+  gulp.src('assets/vendor/bootstrap/js/*.js') // пишемо соурс (Звідки і які файли брати)
+  .pipe(concat('app.js')) // передаэмо управління модулю concat який зклеїть всі файли в один app.js
+  .pipe(gulp.dest('test')); // dest скороченно від destenation - куди скинути готовий файл
+});
+
+watch і інші описувати не буду))
+в консоль вводимо gulp default і в папці test зявляється на склеїний app.js
+Ураааа
+почитайте щось таке http://www.creative-seo.ru/blog/gulp-dlya-nachinayushchih/ щоб зрозуміти які є модулі як і для чого їх використовувати
+а краще почитайте https://travismaynard.com/writing/getting-started-with-gulp
+дуже классна стаття все гарно розписано з прикладами(код і коменти) 
+ДА на англійській, є loftblog і ще пару классних пацанчиків які роблять кучу классних туторіалів але їх всетаки мало
+я кращого на рос мові не знайшов
