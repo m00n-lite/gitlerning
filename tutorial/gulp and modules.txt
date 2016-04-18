@@ -2,8 +2,10 @@ gulp....
 1)Відкриваємо консоль і вводимо
 c:
 cd c:/server
+npm install gulp -g
 npm install --save-dev gulp
-2)ми встановили gulp в наш проект
+2)ми встановили gulp  глобально в системі
+2.1)ми встановили gulp в наш проект
 3)створюэмо файл package.json З таким текстом
 
 {
